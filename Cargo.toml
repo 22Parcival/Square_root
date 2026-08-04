@@ -2,7 +2,7 @@
 name = "square_root"
 version = "0.1.0"
 edition = "2021"
-description = "A custom binary image format rendering pictures using the Root mascot."
+description = "un nouveau format de fichier qui remplace les pixels par Root la mascotte du discord"
 
 [dependencies]
 image = "0.24"
