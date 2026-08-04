@@ -1,6 +1,9 @@
 [package]
 name = "square_root"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+description = "A custom binary image format rendering pictures using the Root mascot."
 
 [dependencies]
+image = "0.24"
+clap = { version = "4.4", features = ["derive"] }
