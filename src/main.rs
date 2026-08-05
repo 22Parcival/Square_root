@@ -26,18 +26,29 @@ struct MascotPixel {
 }
 
 fn main() {
-    let args=Cli::parse();
+    let args = Cli::parse();
 
-    println!("demarrage");
+    println!("start");
     println!("source : {}", args.input);
-    println!("cible : {}", args.output);
+    println!("cible   : {}", args.output);
+   
+    let img = image::open(&args.input).expect("erreur");
+    println!("dimensions image: {}x{}", img.width(), img.height());
+
+
+    let target_width = 100;
+    let target_height = 100;
+    println!("creat grille ({}x{})...", target_width, target_height);
+
+    let resized_img = img.resize_exact(target_width, target_height, FilterType::Nearest);
+    println!("img redimentioner");
 
     let _header = MascotHeader {
-        magic_number: [b'R', b'O', b'o', b'T'],
+        magic_number: [b'R', b'O', b'O', b'T'],
         version: 1,
-        width: 0,
-        height: 0,
+        width: target_width as u16,
+        height: target_height as u16,
     };
-
-    println!("structure data et cli ready");
+    
+    println!("AAA");
 }
