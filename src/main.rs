@@ -16,3 +16,10 @@ struct MascotHeader {
     widtg: u16,
     height: u16,
 }
+
+#[derive(Debug)]
+struct MascotPixel {
+    r: u8,
+    g: u8,
+    b: u8,
+}
