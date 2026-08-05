@@ -1,5 +1,7 @@
 use clap::Parser;
 use image::imageops::FilterType;
+use std::fs::File;
+use std::io::Write;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
