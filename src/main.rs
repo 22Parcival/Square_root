@@ -1,4 +1,5 @@
 use clap::Parser;
+use image::imageops::FilterType;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
