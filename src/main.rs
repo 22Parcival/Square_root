@@ -5,7 +5,7 @@ use clap::Parser;
 struct Cli {
     #[arg(short, long)]
     input: String,
-    #[arg(shorT, long)]
+    #[arg(short, long)]
     output: String,
 }
 
@@ -13,7 +13,7 @@ struct Cli {
 struct MascotHeader {
     magic_number: [u8; 4],
     version: u8,
-    widtg: u16,
+    width: u16,
     height: u16,
 }
 
@@ -22,4 +22,21 @@ struct MascotPixel {
     r: u8,
     g: u8,
     b: u8,
+}
+
+fn main() {
+    let args=Cli::parse();
+
+    println!("demarrage");
+    println!("source : {}", args.input);
+    println!("cible : {}", args.output);
+
+    let _header = MascotHeader {
+        magic_number: [b'R', b'O', b'o', b'T'],
+        version: 1,
+        width: 0,
+        height: 0,
+    };
+
+    println!("structure data et cli ready");
 }
