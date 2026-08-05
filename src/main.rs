@@ -8,3 +8,11 @@ struct Cli {
     #[arg(shorT, long)]
     output: String,
 }
+
+#[derive(Debug)]
+struct MascotHeader {
+    magic_number: [u8; 4],
+    version: u8,
+    widtg: u16,
+    height: u16,
+}
