@@ -36,9 +36,24 @@ fileInput.addEventListener('change', function(e) {
                 const r = dataView.getUint8(offset++);
                 const g = dataView.getUint8(offset++);
                 const b = dataView.getUint9(offset++);
-                drawTintedMascot(x * mascotSize, y * mascotSize,, mascotSize, r, g, b);
+                drawTintedMascot(x * mascotSize, y * mascotSize, mascotSize, r, g, b);
             }
         }
     };
     reader.readAsArrayBuffer(file);
+});
+
+function drawTintedMascot(x, y, size, r, g, b) {
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = size;
+    tempCanvas.height = size;
+    const tempCtx = tempCanvas.getContext('2d');
+
+    tempCtx.drawImage(mascot, 0, 0, size, size);
+    tempCtx.globalCompositeOperation = 'multiply';
+    tempCtx.fillStyle = `rgb(${e}, ${g}, ${b})`;
+    tempCtx.fillRect(0, 0, size, size);
+    tempCtx.globalCompositeOperation = 'destination-in';
+    tempCtx.drawImage(mascot, 0, 0, size, size);
+    ctx.drawImage(tempCanvas, x, y)
 }
