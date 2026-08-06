@@ -44,6 +44,21 @@
             <p class="status-bar-field">CPU-decoded</p>
         </div>
     </div>
+    <div id="errorModal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 350px; background-color: #c0c0c0; border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff; box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #0a0a0a; font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif; font-size: 13px; z-index: 1000; padding: 3px; color: #0a0a0a;">
+        <div style="background: linear-gradient(90deg, #800000, #ff0000); color: #ffffff; padding: 3px 6px; font-weight: bold; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 4px;">Erreur fatale</div>
+            <div style="display: flex; gap: 2px;">
+                <button onclick="document.getElementById('errorModal').style.display = 'none'" style="width: 16px; height: 14px; background-color: #c0c0c0; border: none; box-shadow: inset 1px 1px #ffffff, inset -1px -1px #0a0a0a, inset 2px 2px #dfdfdf, inset -2px -2px #808080; font-family: inherit; font-size: 9px; font-weight: bold; color: #0a0a0a; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0;">X</button>
+            </div>
+        </div>
+        <div style="padding: 15px 10px; display: flex; align-items: center; gap: 15px;">
+            <span style="font-size: 32px; line-height: 1;">⚠️</span>
+            <div style="line-height: 1.4;">Format de fichier invalide. Veuillez fournir un fichier .toor</div>
+        </div>
+        <div style="text-align: center; padding-bottom: 10px;">
+            <button onclick="document.getElementById('errorModal').style.display = 'none'" style="padding: 4px 20px; background-color: #c0c0c0; border: none; box-shadow: inset 1px 1px #ffffff, inset -1px -1px #0a0a0a, inset 2px 2px #dfdfdf, inset -2px -2px #808080; font-family: inherit; font-size: 13px; color: #0a0a0a; cursor: pointer;">OK</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

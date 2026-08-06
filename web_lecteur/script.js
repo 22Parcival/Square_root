@@ -18,7 +18,10 @@ fileInput.addEventListener('change', function(e) {
         
         const  magic = [0, 1, 2, 3,].map(i => String.fromCharCode(dataView.getUint8(i))).join('');
         if (magic !== 'ROOT') {
-            alert("fichiern .toor non valide");
+            document.getElementById('errorModal').style.display = 'block';
+            document.getElementById('fileInfo').textContent = "Erreur de lecture";
+            document.getElementById('statusDimensions').textContent = "0 x 0 pixels";
+            document.getElementById('statusText').textContent = "Opération annulée";
             return;
         }
 
