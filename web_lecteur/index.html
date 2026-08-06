@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecteur .toor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">.toor reader</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        
+        <div class="menu-bar">
+            <div class="menu-item"><span>F</span>ichier</div>
+            <div class="menu-item"><span>O</span>ptions</div>
+            <div class="menu-item"><span>A</span>ide</div>
+        </div>
+
+        <div class="window-body">
+            <fieldset class="control-panel">
+                <legend>Sélection du fichier</legend>
+                <div class="field-row">
+                    <input type="file" id="fileInput" accept=".toor" style="display: none;">
+                    <button class="win-btn" onclick="document.getElementById('fileInput').click()">Parcourir...</button>
+                    <div id="fileInfo" class="win-text-input">Aucun fichier sélectionné</div>
+                </div>
+            </fieldset>
+
+            <div class="canvas-viewport">
+                <canvas id="renderCanvas"></canvas>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <p class="status-bar-field" id="statusText">Prêt</p>
+            <p class="status-bar-field" id="statusDimensions">0 x 0 pixels</p>
+            <p class="status-bar-field">CPU-decoded</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
