@@ -55,6 +55,10 @@ fn main() {
     let rgb_img = resized_img.to_rgb8();
     println!("create {}", args.output);
 
-    let mut  = File::create(&args.output) ;
-    
+    let mut  = File::create(&args.output);
+    file.write_all(&_header.magic_number).unwrap();
+    file.write_all(&[_header.version]).unwrap();
+    file.write_all(&_header.width.to_be_bytes()).unwrap();
+    file.write_all(&_header.height.to_be_bytes()).unwrap();
+
 }
