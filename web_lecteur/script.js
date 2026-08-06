@@ -23,7 +23,7 @@ fileInput.addEventListener('change', function(e) {
         const version = dataView.getUint8(4);
         const gridWidth = dataView.getUint16(5, false);
         const gridHeight = dataView.getUint16(7, false);
-        console.log('.toor version v${version} dim ${gridWidth}x${gridHeight}');
+        console.log(`.toor version v${version} dim ${gridWidth}x${gridHeight}`);
 
         const mascotSize = 12;
         canvas.width = gridWidth * mascotSize;
@@ -35,7 +35,7 @@ fileInput.addEventListener('change', function(e) {
             for (let x = 0; x < gridWidth; x++) {
                 const r = dataView.getUint8(offset++);
                 const g = dataView.getUint8(offset++);
-                const b = dataView.getUint9(offset++);
+                const b = dataView.getUint8(offset++);
                 drawTintedMascot(x * mascotSize, y * mascotSize, mascotSize, r, g, b);
             }
         }
