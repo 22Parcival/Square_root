@@ -248,3 +248,114 @@ body {
 .status-bar-field:nth-child(3) {
     flex-grow: 1;
 }
+
+/* Retro Error Modal */
+#errorModal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: var(--win-gray);
+    padding: 3px;
+    box-shadow: inset 1px 1px var(--win-white), 
+                inset -1px -1px var(--win-black), 
+                inset 2px 2px var(--win-gray-light), 
+                inset -2px -2px var(--win-gray-dark);
+    font-family: var(--font-family);
+    font-size: 13px;
+    z-index: 1000;
+    color: var(--win-black);
+}
+
+#errorModal .error-title-bar {
+    background: linear-gradient(90deg, #800000, #ff0000);
+    color: var(--win-white);
+    padding: 3px 6px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#errorModal .error-title-bar-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#errorModal .error-title-bar-controls {
+    display: flex;
+    gap: 2px;
+}
+
+#errorModal .error-title-bar-controls button {
+    width: 16px;
+    height: 14px;
+    background-color: var(--win-gray);
+    border: none;
+    box-shadow: inset 1px 1px var(--win-white), 
+                inset -1px -1px var(--win-black), 
+                inset 2px 2px var(--win-gray-light), 
+                inset -2px -2px var(--win-gray-dark);
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: bold;
+    color: var(--win-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+#errorModal .error-title-bar-controls button:active {
+    box-shadow: inset 1px 1px var(--win-black), 
+                inset -1px -1px var(--win-white), 
+                inset 2px 2px var(--win-gray-dark), 
+                inset -2px -2px var(--win-gray-light);
+}
+
+#errorModal .error-body {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#errorModal .error-icon {
+    font-size: 32px;
+    line-height: 1;
+}
+
+#errorModal .error-message {
+    line-height: 1.4;
+}
+
+#errorModal .error-footer {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#errorModal .error-btn {
+    padding: 4px 20px;
+    background-color: var(--win-gray);
+    border: none;
+    box-shadow: inset 1px 1px var(--win-white), 
+                inset -1px -1px var(--win-black), 
+                inset 2px 2px var(--win-gray-light), 
+                inset -2px -2px var(--win-gray-dark);
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--win-black);
+    cursor: pointer;
+    outline: none;
+}
+
+#errorModal .error-btn:active {
+    box-shadow: inset 1px 1px var(--win-black), 
+                inset -1px -1px var(--win-white), 
+                inset 2px 2px var(--win-gray-dark), 
+                inset -2px -2px var(--win-gray-light);
+}
