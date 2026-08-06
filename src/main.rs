@@ -55,10 +55,17 @@ fn main() {
     let rgb_img = resized_img.to_rgb8();
     println!("create {}", args.output);
 
-    let mut  = File::create(&args.output);
+    let mut file = File::create(&args.output).expect("erreur");
     file.write_all(&_header.magic_number).unwrap();
     file.write_all(&[_header.version]).unwrap();
     file.write_all(&_header.width.to_be_bytes()).unwrap();
     file.write_all(&_header.height.to_be_bytes()).unwrap();
+
+    for pixel in rgb_img.pixels() {
+        let color_bytes = [pixel[0], pixel[1], pixel[2]];
+        file.write_all(&color_bytes).unwrap();
+    }
+
+    println!("fichier {} generate", args.output);
 
 }
