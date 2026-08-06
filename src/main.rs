@@ -54,5 +54,7 @@ fn main() {
     
     let rgb_img = resized_img.to_rgb8();
     println!("create {}", args.output);
+
+    let mut  = File::create(&args.output) ;
     
 }
