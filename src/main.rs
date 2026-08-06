@@ -38,8 +38,8 @@ fn main() {
     println!("dimensions image: {}x{}", img.width(), img.height());
 
 
-    let target_width = 100;
-    let target_height = 100;
+    let target_width: u32 = 200;
+    let target_height: u32 = (img.height()*target_width/img.width());
     println!("creat grille ({}x{})...", target_width, target_height);
 
     let resized_img = img.resize_exact(target_width, target_height, FilterType::Nearest);
