@@ -27,6 +27,9 @@ fileInput.addEventListener('change', function(e) {
         const gridHeight = dataView.getUint16(7, false);
         console.log(`.toor version v${version} dim ${gridWidth}x${gridHeight}`);
 
+        document.getElementById('statusDimensions').textContent = `${gridWidth} x ${gridHeight}`;
+        document.getElementById('statusText').textContent = "successful operation";
+
         const mascotSize = 15;
         canvas.width = gridWidth * mascotSize;
         canvas.height = gridHeight * mascotSize;
