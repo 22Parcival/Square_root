@@ -51,7 +51,7 @@ function drawTintedMascot(x, y, size, r, g, b) {
 
     tempCtx.drawImage(mascot, 0, 0, size, size);
     tempCtx.globalCompositeOperation = 'multiply';
-    tempCtx.fillStyle = `rgb(${e}, ${g}, ${b})`;
+    tempCtx.fillStyle = `rgb(${r}, ${g}, ${b})`;
     tempCtx.fillRect(0, 0, size, size);
     tempCtx.globalCompositeOperation = 'destination-in';
     tempCtx.drawImage(mascot, 0, 0, size, size);
