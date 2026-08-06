@@ -9,6 +9,8 @@ fileInput.addEventListener('change', function(e) {
     const file = e.target.files[0];
     if (!file) return;
 
+    document.getElementById('fileInfo').textContent = file.name;
+
     const reader = new FileReader();
     reader.onload = function(envent) {
         const arrayBuffer = event.target.result;
@@ -25,7 +27,7 @@ fileInput.addEventListener('change', function(e) {
         const gridHeight = dataView.getUint16(7, false);
         console.log(`.toor version v${version} dim ${gridWidth}x${gridHeight}`);
 
-        const mascotSize = 12;
+        const mascotSize = 15;
         canvas.width = gridWidth * mascotSize;
         canvas.height = gridHeight * mascotSize;
 
