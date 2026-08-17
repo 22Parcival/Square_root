@@ -22,3 +22,5 @@ par exemple moi je fait : ```cargo run -- --input test_img/aywen1.jpg --output t
  * ouvrez le dossier `web_lecteur` puis lancer le fichier index.html (avec live server ou juste en ouvrant le fichier dans votre navigateur web)
 
  * une fois le site ouvert cliquez sur le bouton `Parcourir`, sélectionner votre fichier en `.toor` l'image devrais ensuite ce lancez après une ou deux seconde si ce n'est pas instantané
+
+ * ps, le site sera peut être un jour herberger en ligne sur mon propre si je n'oublie pas :)
